@@ -1,0 +1,53 @@
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+  filter: brightness(50%);
+}
+
+.show {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  z-index: 100;
+
+  display: flex;
+}
+
+.textbox {
+  padding: 0 0 0 32px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.title:hover {
+  text-decoration: underline;
+}
+
+.title a {
+  color: white;
+  text-decoration: none;
+}
+
+.textbox ul {
+  padding: 0 0 0 20px;
+  color: white;
+  font-size: 18px;
+}
+
+.textbox p {
+  color: whitesmoke;
+  font-weight: 300;
+  font-size: 14px;
+}
