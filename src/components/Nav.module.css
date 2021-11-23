@@ -1,7 +1,7 @@
 :root {
-  --green-color-3: #4d8076;
-  --green-color-2: #00c9a7;
-  --green-color-1: #c4fcef;
+  --green-color-3: #41227f;
+  --green-color-2: #dcb0ff;
+  --green-color-1: #faccff;
 }
 .container {
   display: flex;
@@ -39,6 +39,7 @@
 .title strong {
   font-size: 32px;
   color: var(--green-color-1);
+  letter-spacing: 0.5px;
 }
 .option__list {
   display: flex;
@@ -46,8 +47,6 @@
 
 .option__list li {
   font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding: 4px 12px;
   color: var(--green-color-1);
 }

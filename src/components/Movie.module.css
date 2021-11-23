@@ -1,5 +1,5 @@
 .movie {
-  background-color: white;
+  background-color: #fef7ff;
   margin-bottom: 70px;
   font-weight: 300;
   padding: 20px;
@@ -12,6 +12,16 @@
   color: inherit;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  transition: all 0.4s ease;
+}
+
+.movie > * {
+  color: #4b4453;
+}
+.movie:hover {
+  transform: translateY(-10px);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .movie__img {
@@ -22,6 +32,7 @@
   margin-right: 30px;
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
     0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  transition: all 0.4s ease;
 }
 
 .movie__title,
@@ -38,6 +49,9 @@
   text-decoration: none;
 }
 
+.movie__title:hover {
+  text-decoration: underline;
+}
 .movie__genres {
   list-style: none;
   padding: 0;
