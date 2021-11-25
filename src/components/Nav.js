@@ -5,12 +5,15 @@ import styles from "./Nav.module.css";
 function Nav() {
     let last_known_scroll_position = 0;
     let ticking = false;
+    const [changing, setChanging] = useState(false);
     const [scrolling, setScrolling] = useState(false);
 
     const doSomething = (scroll_pos) => {
         if (scroll_pos >= 10) {
+            setChanging(true);
             setScrolling(true);
         } else {
+            setChanging(false);
             setScrolling(false);
         }
     }
@@ -27,11 +30,15 @@ function Nav() {
     }
     });
 
-    const onMouseOver = () => setScrolling(true);
-    const onMouseOut = () => setScrolling(false);
+    const onMouseOverOut = () => {
+        if (scrolling)
+            return
+           
+        setChanging(current => !current);
+    }
     
     return <div>
-        <nav onMouseOver={onMouseOver} onMouseOut={onMouseOut} style={scrolling ? 
+        <nav onMouseOver={onMouseOverOut} onMouseOut={onMouseOverOut} style={changing ? 
             {backgroundColor : "#845EC2",
             boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,rgba(0, 0, 0, 0.3) 0px 8px 16px -8px"}
              : {backgroundColor : "transparent"}} className={styles.container} >
