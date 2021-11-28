@@ -2,6 +2,8 @@
   height: 100%;
   display: flex;
   justify-content: center;
+
+  position: relative;
 }
 
 .loader {
@@ -24,6 +26,25 @@
   padding-top: 70px;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  padding: 0;
+
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer li {
+  padding: 12px;
+}
+.footer li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+
+}
 @media screen and (max-width: 1090px) {
   .movies {
     grid-template-columns: 1fr;

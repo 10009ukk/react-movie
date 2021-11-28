@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 
 function List() {
   const { num } = useParams();
-  const [nums, setNums] = useState([...Array(10)].map((_,i) => i + +num));
+  const [nums, setNums] = useState([...Array(10)].map((_,i) => i + 1));
   useEffect(() => {
 
   }, [nums]);
@@ -53,12 +53,12 @@ function List() {
           ))}
         </div>      
       )}
-      <div>
-      {nums.map((num) => {
-          console.log(num);
-          return <Link to={`/page/${num}`} onClick={() => setReloading(true)}>{num}</Link>})
-      }
-      </div>
+      <ul className={styles.footer}>
+        {loading ? null : nums.map(num => 
+        <li><Link to={`/page/${num}`} onClick={() => setReloading(true)}>{num}</Link></li>
+        )}
+      </ul>
+        
     </div>
   );
 }
