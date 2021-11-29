@@ -23,11 +23,13 @@
   height: 345px;
 }
 .textbox {
-  padding: 0 0 0 32px;
-  width: 250px;
-  display: flex;
+  padding: 0 16px 0 32px;
+  width: 300px;
+  height: 345px;
+
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center; */
 }
 
 .title {

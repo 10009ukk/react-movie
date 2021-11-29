@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Movie from "../components/Movie";
-import Footer from "../components/Footer";
+import Loading from "../components/Loading";
 import styles from "./List.module.css";
 import {Link} from "react-router-dom";
 
 function List() {
   const { num } = useParams();
-  const [nums, setNums] = useState([...Array(10)].map((_,i) => i + 1));
+  const [listNums, setListNums] = useState([...Array(10)].map((_,i) => i + 1));
   useEffect(() => {
 
-  }, [nums]);
+  }, [listNums]);
 
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
@@ -35,9 +35,7 @@ function List() {
   return (
     <div className={styles.container}>
       {loading ? (
-        <div className={styles.loader}>
-          <span>Loading...</span>
-        </div>
+        <Loading />
       ) : (
         <div className={styles.movies}>
           {movies.map((movie) => (
@@ -54,9 +52,21 @@ function List() {
         </div>      
       )}
       <ul className={styles.footer}>
-        {loading ? null : nums.map(num => 
-        <li><Link to={`/page/${num}`} onClick={() => setReloading(true)}>{num}</Link></li>
+        {/* <a><i class="fas fa-caret-left"></i></a> */}
+        {loading ? null : listNums.map(listNum => {
+          return (
+            <li>
+              <Link 
+                to={`/page/${listNum}`} 
+                onClick={() => setReloading(true)}
+                className={
+                  listNum == num ? styles.focusing : null
+                }>{listNum}</Link>
+            </li>
+          )
+        }
         )}
+        {/* <div><i class="fas fa-caret-right"></i></div> */}
       </ul>
         
     </div>

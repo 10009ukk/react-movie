@@ -1,6 +1,6 @@
 import styles from "./Point.module.css";
 
-function Point({background_image_original, medium_cover_image, url, title_long, rating, runtime, genres, description_full}) {
+function Point({background_image_original, medium_cover_image, url, title_long, rating, runtime, genres, download_count}) {
     return (
         <div>
             <img className={styles.bg} src={background_image_original} />           
@@ -11,6 +11,7 @@ function Point({background_image_original, medium_cover_image, url, title_long, 
                     <ul>
                         <li>Rating {rating}</li>
                         <li>Runtime {runtime}</li>
+                        <li>Download {download_count}</li>
                         <li>
                             Genres
                             <ul>
@@ -18,7 +19,6 @@ function Point({background_image_original, medium_cover_image, url, title_long, 
                             </ul>
                         </li>
                     </ul>
-                    <p>{description_full.length > 140 ? `${description_full.slice(0, 140)}...` : description_full}</p>
                 </div>
             </div>
         </div>

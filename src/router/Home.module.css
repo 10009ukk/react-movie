@@ -4,17 +4,6 @@
   justify-content: center;
 }
 
-.loader {
-  width: 100%;
-  height: calc(100vh - 100px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 300;
-
-  color: #fff;
-}
-
 .movies {
   display: grid;
   grid-template-columns: repeat(2, minmax(400px, 1fr));

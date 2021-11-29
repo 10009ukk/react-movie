@@ -28,23 +28,32 @@
 
 .footer {
   position: absolute;
-  bottom: 0;
+  bottom: 15px;
   padding: 0;
 
   list-style: none;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
-.footer li {
-  padding: 12px;
-}
 .footer li a {
+  padding: 12px;
   text-decoration: none;
-  font-size: 18px;
-  color: #fff;
+  font-size: 22px;
 
+  text-shadow: 3px 2px 0 #b1bdc5;
+  color: #ffffff;
 }
+
+.footer li .focusing {
+  color: #dadde2;
+}
+.footer li a:hover {
+  cursor: pointer;
+  color: #dadde2;
+}
+
 @media screen and (max-width: 1090px) {
   .movies {
     grid-template-columns: 1fr;
