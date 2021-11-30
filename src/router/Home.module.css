@@ -1,10 +1,36 @@
 .container {
   height: 100%;
-  display: flex;
-  justify-content: center;
+  
 }
 
-.movies {
+.title {
+  text-align: center;
+  font-size: 42px;
+}
+.title a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.title a:hover {
+  text-decoration: underline;
+}
+.slide__show {
+  margin: 30px 16px 0 16px;
+
+}
+.slide {
+  width: 100%;
+  padding: 50px 0 0 0;
+  overflow-x: hidden;
+  display: flex;
+}
+
+
+.slide div {
+  margin: 0 24px;
+}
+
+/* .movies {
   display: grid;
   grid-template-columns: repeat(2, minmax(400px, 1fr));
   grid-gap: 100px;
@@ -18,4 +44,4 @@
     grid-template-columns: 1fr;
     width: 100%;
   }
-}
+} */
