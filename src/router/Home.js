@@ -24,32 +24,25 @@ function Home() {
   }, []);
   return (
     <div className={styles.container}>
-      {loading ? (
-        <Loading />
-      ) : (
-        <div>
-          <h3 className={styles.title}><Link to="/page/1">Detail Page</Link></h3>
-          <div className={styles.slide__show}>
-            <div className={styles.slide}>
-                {movies.map((movie) => (
-              <Movie
-                key={movie.id}
-                id={movie.id}
-                year={movie.year}
-                coverImg={movie.medium_cover_image}
-                title={movie.title}
-                summary={""}
-                genres={movie.genres}
-              />
-            ))}
-            </div>
-            <button className={styles.left}><i class="fas fa-angle-left"></i></button>
-            <button className={styles.right}><i class="fas fa-angle-right"></i></button>
-          </div>
-          {/* <Slide movies={movies} /> */}
-        </div>
+      
+      <div>
+          <h3 className={styles.title}><Link to="/page/minimum_rating=8.8/1">Detail Page</Link></h3>
+          <Slide ytsApi={`https://yts.mx/api/v2/list_movies.json?limit=10&minimum_rating=8.8&sort_by=year`} />
+      </div>
+      <div>
+          <h3 className={styles.title}><Link to="/page/genre=romance/1">Detail Page</Link></h3>
+          <Slide ytsApi={`https://yts.mx/api/v2/list_movies.json?limit=10&genre=romance&sort_by=year`} />
+      </div>
+      <div>
+          <h3 className={styles.title}><Link to="/page/genre=horror/1">Detail Page</Link></h3>
+          <Slide ytsApi={`https://yts.mx/api/v2/list_movies.json?limit=10&genre=horror&sort_by=year`} />
+      </div>
+      <div>
+          <h3 className={styles.title}><Link to="/page/genre=comedy/1">Detail Page</Link></h3>
+          <Slide ytsApi={`https://yts.mx/api/v2/list_movies.json?limit=10&genre=comedy&sort_by=year`} />
+      </div>
 
-        )}
+      
     </div>
   )
 }

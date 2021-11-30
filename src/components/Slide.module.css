@@ -1,0 +1,32 @@
+.slide__show {
+  margin: 30px 16px 0 16px;
+  overflow-x: hidden;
+
+  position: relative;
+}
+.slide {
+  width: 100%;
+  padding: 50px 0 0 0;
+  display: flex;
+
+  transition: all 0.4s ease;
+}
+
+.slide div {
+  margin: 0 12px;
+}
+
+.left,
+.right {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background-color: #ffffff;
+  border-radius: 25px;
+  font-size: 30px;
+}
+.left {
+  position: absolute;
+  top: 45%;
+}

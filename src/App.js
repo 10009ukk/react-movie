@@ -12,7 +12,7 @@ function App() {
   return <Router>
     <Nav />
     <Routes>
-      <Route path="/page/:num" element={<List />} />
+      <Route path="/page/:detail/:num" element={<List />} />
       <Route path="/movie/:id" element={<Detail />} />
       <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} />
     </Routes>

@@ -6,7 +6,7 @@ import styles from "./List.module.css";
 import {Link} from "react-router-dom";
 
 function List() {
-  const { num } = useParams();
+  const { num, detail } = useParams();
   const [listNums, setListNums] = useState([...Array(10)].map((_,i) => i + 1));
   useEffect(() => {
 
@@ -19,7 +19,7 @@ function List() {
   const getMovies = async () => {
     const json = await (
       await fetch(
-        `https://yts.mx/api/v2/list_movies.json?page=${num}&minimum_rating=7&sort_by=year`
+        `https://yts.mx/api/v2/list_movies.json?page=${num}&${detail}&sort_by=year`
       )
     ).json();
     setMovies(json.data.movies);
@@ -57,7 +57,7 @@ function List() {
           return (
             <li>
               <Link 
-                to={`/page/${listNum}`} 
+                to={`/page/${detail}/${listNum}`} 
                 onClick={() => setReloading(true)}
                 className={
                   listNum == num ? styles.focusing : null

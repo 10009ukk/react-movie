@@ -1,6 +1,5 @@
 .container {
   height: 100%;
-  
 }
 
 .title {
@@ -13,21 +12,6 @@
 }
 .title a:hover {
   text-decoration: underline;
-}
-.slide__show {
-  margin: 30px 16px 0 16px;
-
-}
-.slide {
-  width: 100%;
-  padding: 50px 0 0 0;
-  overflow-x: hidden;
-  display: flex;
-}
-
-
-.slide div {
-  margin: 0 24px;
 }
 
 /* .movies {
