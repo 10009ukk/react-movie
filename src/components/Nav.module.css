@@ -45,13 +45,13 @@
   display: flex;
 }
 
-.option__list li {
+.option__list li a {
   font-size: 16px;
   padding: 4px 12px;
   color: var(--green-color-1);
 }
 
-.option__list li:hover {
+.option__list li a:hover {
   cursor: pointer;
   color: var(--green-color-2);
 }

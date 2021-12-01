@@ -12,13 +12,13 @@ function Slide({ytsApi}) {
       if (trans >= 0) {
         return;
       }
-      setTrans(current => current + 250);
+      setTrans(current => current + 350);
     }
     const onClickR = () => {
-      if (trans <= -1600) {
+      if (trans <= -2450) {
         return;
       }
-      setTrans(current => current - 250);
+      setTrans(current => current - 350);
     }
   const getMovies = async () => {
     const json = await (
@@ -32,7 +32,7 @@ function Slide({ytsApi}) {
   }, []);
 
     return (
-        <div>
+        <div className={styles.container}>
           {loading ? <Loading /> :    
             <div className={styles.slide__show}>
               <div className={styles.slide} style={{
@@ -47,16 +47,23 @@ function Slide({ytsApi}) {
                   title={movie.title}
                   summary={""}
                   genres={movie.genres}
+                  movie_style={{
+                    minWidth: "350px",
+                    height: "300px",
+                  }}
                 />
               ))}
               </div>
-              <button class={styles.left} onClick={onClickL}><i class="fas fa-caret-square-left"></i></button>
-              <button class={styles.right} onClick={onClickR}><i class="fas fa-caret-square-right"></i></button>
-
-
             </div>
           }
-          </div>
+          {loading ? null : (
+            <div>
+              <button class={styles.left} onClick={onClickL}><i class="fas fa-caret-square-left"></i></button>
+              <button class={styles.right} onClick={onClickR}><i class="fas fa-caret-square-right"></i></button>          
+            </div>
+          )}
+          
+        </div>
     )
 }
 

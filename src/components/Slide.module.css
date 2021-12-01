@@ -1,19 +1,19 @@
-.slide__show {
-  margin: 30px 16px 0 16px;
-  overflow-x: hidden;
-
+.container {
   position: relative;
 }
+.slide__show {
+  width: 1050px;
+  overflow: hidden;
+
+  position: relative;
+  left: calc(50% - 525px);
+}
 .slide {
-  width: 100%;
+  width: 3500px;
   padding: 50px 0 0 0;
   display: flex;
 
   transition: all 0.4s ease;
-}
-
-.slide div {
-  margin: 0 12px;
 }
 
 .left,
@@ -21,12 +21,11 @@
   background-color: transparent;
   border: none;
   outline: none;
-  color: #97ACCF;
-  opacity: 0.9;
+  color: #00d2fc;
+  opacity: 0.8;
   font-size: 44px;
-  text-shadow: 3px 2px 0 #3E4756;
 
-  transition: all .4s;
+  transition: all 0.4s;
 }
 
 .left:hover,
@@ -36,14 +35,16 @@
 }
 
 .left {
+  text-shadow: 3px 2px 0 #009efa;
+
   position: absolute;
-  top: 45%;
-  left: 0;
+  top: calc(50% - 22px);
+  left: 80px;
 }
 
 .right {
-  text-shadow: -3px 2px 0 #3E4756;
+  text-shadow: -3px 2px 0 #009efa;
   position: absolute;
-  top: 45%;
-  right: 0;
+  top: calc(50% - 22px);
+  right: 80px;
 }

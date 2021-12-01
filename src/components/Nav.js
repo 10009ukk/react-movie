@@ -49,10 +49,10 @@ function Nav() {
             </Link>
         </div>
         <ul className={styles.option__list}>
-            <li>Home</li>
-            <li>4K</li>
-            <li>Trending</li>
-            <li>Browser</li>
+            <li><Link to="/page/minimum_rating=7/1" onClick={() => Location.reload()}>HighRating</Link></li>
+            <li><Link to="/page/genre=romance/1" onClick={() => Location.reload()}>Romance</Link></li>
+            <li><Link to="/page/genre=thriller/1" onClick={() => Location.reload()}>Thriller</Link></li>
+            <li><Link to="/page/genre=animation/1" onClick={() => Location.reload()}>Animation</Link></li>
         </ul>
         <ul className={styles.icon__list}>
             <li><a href="https://twitter.com/?lang=ko" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
