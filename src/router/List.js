@@ -52,7 +52,6 @@ function List() {
         </div>      
       )}
       <ul className={styles.footer}>
-        {/* <a><i class="fas fa-caret-left"></i></a> */}
         {loading ? null : listNums.map(listNum => {
           return (
             <li>
@@ -66,7 +65,6 @@ function List() {
           )
         }
         )}
-        {/* <div><i class="fas fa-caret-right"></i></div> */}
       </ul>
         
     </div>
