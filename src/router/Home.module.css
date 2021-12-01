@@ -2,16 +2,24 @@
   height: 100%;
 }
 
+.slide__box {
+  padding: 0 0 40px 0;
+}
+
 .title {
   text-align: center;
   font-size: 42px;
 }
+
 .title a {
   color: #ffffff;
   text-decoration: none;
 }
 .title a:hover {
   text-decoration: underline;
+}
+.title a i {
+  margin-right: 20px;
 }
 
 /* .movies {

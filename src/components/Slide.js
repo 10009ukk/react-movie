@@ -9,13 +9,15 @@ function Slide({ytsApi}) {
   const [trans, setTrans] = useState(0);
 
     const onClickL = () => {
-      if (trans >= 100) 
+      if (trans >= 0) {
         return;
+      }
       setTrans(current => current + 250);
     }
     const onClickR = () => {
-      if (trans <= -2600)
+      if (trans <= -1600) {
         return;
+      }
       setTrans(current => current - 250);
     }
   const getMovies = async () => {
@@ -48,8 +50,9 @@ function Slide({ytsApi}) {
                 />
               ))}
               </div>
-              <a class={styles.left} onclick={onClickL}>&#10094;</a>
-              <a class={styles.right} onclick={onClickR}>&#10095;</a>
+              <button class={styles.left} onClick={onClickL}><i class="fas fa-caret-square-left"></i></button>
+              <button class={styles.right} onClick={onClickR}><i class="fas fa-caret-square-right"></i></button>
+
 
             </div>
           }

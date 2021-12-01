@@ -18,15 +18,30 @@
 
 .left,
 .right {
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  line-height: 50px;
-  background-color: #ffffff;
-  border-radius: 25px;
-  font-size: 30px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #5E5E5E;
+  font-size: 44px;
+
+  transition: all .4s;
 }
+
+.left:hover,
+.right:hover {
+  cursor: pointer;
+  color: #C90000;
+  transform: scale(1.2);
+}
+
 .left {
   position: absolute;
   top: 45%;
+  left: 0;
+}
+
+.right {
+  position: absolute;
+  top: 45%;
+  right: 0;
 }
