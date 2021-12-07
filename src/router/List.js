@@ -4,17 +4,18 @@ import Movie from "../components/Movie";
 import Loading from "../components/Loading";
 import styles from "./List.module.css";
 import {Link} from "react-router-dom";
+import { listPageReLoading, focusNav} from "../atom/Atoms";
+import { useRecoilState, useSetRecoilState } from "recoil";
+
+const listNums = [...Array(10)].map((_,i) => i + 1);
 
 function List() {
   const { num, detail } = useParams();
-  const [listNums, setListNums] = useState([...Array(10)].map((_,i) => i + 1));
-  useEffect(() => {
-
-  }, [listNums]);
 
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
-  const [reloading, setReloading] = useState(false);
+  const [reloading, setReloading] = useRecoilState(listPageReLoading);
+  const focusPage = useSetRecoilState(focusNav);
 
   const getMovies = async () => {
     const json = await (
@@ -28,6 +29,7 @@ function List() {
   useEffect(() => {
     setReloading(false);
     setLoading(true);
+    focusPage(detail);
 
     getMovies();
   }, [reloading]);

@@ -4,25 +4,12 @@ import Loading from "../components/Loading";
 import styles from "./Home.module.css";
 import Movie from "../components/Movie";
 import Slide from "../components/Slide";
+import navList from "../atom/NavList";
 
 function Home() {
-  const slides = [{
-    title : "High Rating",
-    path: "minimum_rating=7"
-  }, {
-    title : "Romance",
-    path: "genre=romance"
-  }, {
-    title : "Thriller",
-    path: "genre=thriller"
-  }, {
-    title : "Animation",
-    path: "genre=animation"
-  }]
-  
   return (
       <div className={styles.container}>
-        {slides.map(slide => {
+        {navList.map(slide => {
           return (
             <div className={styles.slide__box}>
                 <h3 className={styles.title}>
